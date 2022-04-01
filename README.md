@@ -4,4 +4,4 @@ A small project that uses APIs to access the users's public IP address and displ
 
 See deployed version [here](https://sarahliess.github.io/whatsmyip/).
 
-![screenshot](../whatsmyip/src/screenshot.png)
+![screenshot](./src/screenshot.png)
