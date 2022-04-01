@@ -1,0 +1,37 @@
+.map-container {
+  border-top: solid 4px black;
+  margin: 2rem auto;
+  width: 80%;
+  box-shadow: 1px 1px 23px 5px #fff000;
+}
+
+.map-details {
+  border: solid 2px #fff000;
+  background: white;
+  padding: 1rem;
+  position: absolute;
+  top: 60vh;
+  left: 5vw;
+  box-shadow: 1px 1px 20px 2px #fff000;
+  max-width: 400px;
+}
+
+.map-details h2 {
+  color: #262626;
+}
+
+.map-details p {
+  color: #262626;
+}
+
+.hide {
+  display: none;
+}
+
+.show-more-text {
+  cursor: pointer;
+}
+
+.show-more-info {
+  border: solid 1px green;
+}
