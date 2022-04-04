@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/whatsmyip/static/css/main.b119f2d8.css",
-    "main.js": "/whatsmyip/static/js/main.2303ab7d.js",
+    "main.css": "/whatsmyip/static/css/main.1f2994f4.css",
+    "main.js": "/whatsmyip/static/js/main.218f3ba5.js",
     "static/js/787.30d38e9e.chunk.js": "/whatsmyip/static/js/787.30d38e9e.chunk.js",
     "index.html": "/whatsmyip/index.html",
-    "main.b119f2d8.css.map": "/whatsmyip/static/css/main.b119f2d8.css.map",
-    "main.2303ab7d.js.map": "/whatsmyip/static/js/main.2303ab7d.js.map",
+    "main.1f2994f4.css.map": "/whatsmyip/static/css/main.1f2994f4.css.map",
+    "main.218f3ba5.js.map": "/whatsmyip/static/js/main.218f3ba5.js.map",
     "787.30d38e9e.chunk.js.map": "/whatsmyip/static/js/787.30d38e9e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b119f2d8.css",
-    "static/js/main.2303ab7d.js"
+    "static/css/main.1f2994f4.css",
+    "static/js/main.218f3ba5.js"
   ]
 }
