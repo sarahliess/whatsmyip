@@ -10,8 +10,8 @@
   background: white;
   padding: 1rem;
   position: absolute;
-  top: 60vh;
-  left: 5vw;
+  top: 20vh;
+  left: 8vw;
   box-shadow: 1px 1px 20px 2px #fff000;
   max-width: 400px;
 }
@@ -32,6 +32,15 @@
   cursor: pointer;
 }
 
-.show-more-info {
-  border: solid 1px green;
+.country-details-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem;
+}
+
+.country-details-inner img {
+  width: 100px;
+  margin-bottom: 1rem;
 }

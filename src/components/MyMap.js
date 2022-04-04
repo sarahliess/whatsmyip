@@ -6,7 +6,8 @@ import "./MyMap.css";
 export default function MyMap({ location }) {
   const [show, setShow] = useState(true);
   const [showMore, setShowMore] = useState(true);
-  const [countryDetails, setCountryDetails] = useState(true);
+  const [countryDetails, setCountryDetails] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   let { city, country, lat, lng, region, timezone } = location;
 
   const handleButtonClick = () => {
@@ -20,18 +21,31 @@ export default function MyMap({ location }) {
   useEffect(() => {
     //asynchronous operation
     const fetchCountryInfo = async () => {
+      setIsLoading(true);
       await fetch(`https://restcountries.com/v3.1/alpha/${location.country}`)
         .then((res) => res.json())
         .then((data) => {
           setCountryDetails(data[0]);
+          setIsLoading(false);
           console.log("fetch worked", data[0]);
+          console.log("loading", isLoading);
         });
     };
     fetchCountryInfo();
   }, [location]);
-  let { altSpellings, capital, continents, currencies, flags, name, borders } =
-    countryDetails;
+  let {
+    altSpellings,
+    region: region2,
+    capital,
+    continents,
+    currencies,
+    flags,
+    name,
+    population,
+    borders,
+  } = countryDetails;
 
+  console.log("check countrydetails", countryDetails);
   return (
     <>
       <div className="map-container">
@@ -49,29 +63,22 @@ export default function MyMap({ location }) {
           <p>Region: {region}</p>
           <p>Country: {country}</p>
           <p>Timezone: {timezone}</p>
-
+          <div className={!showMore ? "country-details" : "hide"}>
+            {countryDetails.length !== 0 && !isLoading ? (
+              <div className="country-details-inner">
+                <img src={flags.png} alt={`${name.common} flag`} />
+                {name.common} has got {borders.length} borders in total is
+                located in {region2}. The capital of {name.common} is {capital}{" "}
+                and has a population of {population} people.
+                <br />
+              </div>
+            ) : (
+              "could not find more details"
+            )}
+          </div>{" "}
           <p onClick={handleShow} className="show-more-text">
             <em>{showMore ? "show more" : "show less"}</em>
-          </p>
-          {/* {countryDetails ? (
-            <div className={!showMore ? "show-more-info" : "hide"}>
-              <p>
-                {countryDetails ? "found some" : "nope"}
-                {countryDetails.name.common}
-                Here's some more interesting information about your location.{" "}
-                {name && name.common} has {borders && borders.length} borders.
-                The country codes of the countries next to {name && name.common}{" "}
-                are{" "}
-                {borders &&
-                  borders.map((el) => {
-                    return { el };
-                  })}
-              </p>
-            </div>
-          ) : (
-            "nope"
-          )} */}
-
+          </p>{" "}
           <button onClick={handleButtonClick}>close</button>
         </div>
       </div>

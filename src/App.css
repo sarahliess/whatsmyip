@@ -29,7 +29,6 @@ button:hover {
 h1 {
   color: #fff000;
   text-transform: uppercase;
-  /* box-shadow: 3px 4px 10px 2px #696969; */
   padding-top: 2vh;
   transition: all 0.3s ease-in;
   font-size: 4rem;
